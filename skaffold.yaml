@@ -3,7 +3,7 @@ kind: Config
 build:
   artifacts:
   - image: basilvarghese/simple-frontend
-    context: ./coit-frontend
+    context: ./simple-frontend
   local:
     push: true
 deploy:
