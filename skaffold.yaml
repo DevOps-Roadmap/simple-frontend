@@ -1,0 +1,18 @@
+apiVersion: skaffold/v2beta29
+kind: Config
+build:
+  artifacts:
+  - image: basilvarghese/simple-frontend
+    context: ./coit-frontend
+  local:
+    push: true
+deploy:
+  helm:
+    releases:
+    - name: simple-frontend
+      chartPath: helm_chart
+      artifactOverrides: 
+        image: basilvarghese/simple-frontend
+      imageStrategy:
+        helm: {}
+
