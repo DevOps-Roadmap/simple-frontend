@@ -7,12 +7,6 @@ build:
   local:
     push: true
 deploy:
-  helm:
-    releases:
-    - name: simple-frontend
-      chartPath: helm_chart
-      artifactOverrides: 
-        image: basilvarghese/simple-frontend
-      imageStrategy:
-        helm: {}
-
+  kubectl:
+    manifests:
+      - k8s/*
